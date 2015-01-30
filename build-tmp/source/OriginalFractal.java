@@ -24,7 +24,7 @@ private double circAng=.3f;
 public void setup() 
 {   
 	size(640,480);    
-	//noLoop(); 
+	noLoop(); 
 } 
 public void draw() 
 {   
@@ -32,7 +32,7 @@ public void draw()
 // 	stroke(0,255,0);   
 // 	line(320,480,320,380);   
 // 	drawBranches(320,380,10,3*(Math.PI/2)); 
-    drawElf(mouseX,240,480,mouseX);
+    drawElf(320,240,480,mouseX);
     fill(255);
     line(320,0,320,480);
 } 
@@ -40,12 +40,14 @@ public void draw()
 public void drawElf(int x, int y, float circR, int blurb){
     int x1=x-10;
     int x2=x+10;
+    int y2=y-5;
     fill((int)(Math.random()*25)+50,(int)(Math.random()*100)+25,blurb, circR/8);
     noStroke();
     ellipse(x,y,circR,circR);
     if(circR>5){
         drawElf(x1,y,circR/2,blurb);
         drawElf(x2,y,circR/2,blurb);
+        drawElf(x,y2,circR/2,blurb);
     }
 }
 // {   
